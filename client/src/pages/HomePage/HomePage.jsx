@@ -1,3 +1,5 @@
+import { Slider } from "../../swiper/Swiper";
+
 export function HomePage() {
-  return <div>HomePage</div>;
+  return <Slider />;
 }
