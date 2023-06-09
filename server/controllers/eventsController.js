@@ -8,6 +8,10 @@ const eventsController = {
     getAll: (req, res) => {
 
         Events.find()
+        .populate([
+            { path: "seats" },
+            { path: "category" }
+        ])
             .then(data => {
                 res.json(data);
             })
@@ -47,6 +51,7 @@ const eventsController = {
                     ticket: req.body.ticket,
                     minimumPrice: req.body.minimumPrice,
                     maxsimumPrice: req.body.maxsimumPrice,
+                    seats: req.body.seats,
                     startTime: req.body.startTime,
                     finishTime: req.body.finishTime,
                     popular: req.body.popular,
