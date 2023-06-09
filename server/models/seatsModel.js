@@ -5,7 +5,8 @@ const seatsSchema = new mongoose.Schema({
     A2: Number,
     B1: Number,
     B2: Number,
-    VIP: Number
+    VIP: Number,
+    General: Number
 
 })
 
