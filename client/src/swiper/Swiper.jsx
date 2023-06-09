@@ -1,13 +1,13 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import "swiper/css";
-import test from "../../assets/img/Rectangle 12.png";
+import test from "../../assets/img/test.png";
 export const Slider = () => {
   return (
     <div className="">
       <Swiper
         spaceBetween={15}
-        slidesPerView={4}
+        slidesPerView={3}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
