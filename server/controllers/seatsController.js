@@ -37,7 +37,8 @@ const seatsController = {
             A2: req.body.A2,
             B1: req.body.B1,
             B2: req.body.B2,
-            VIP: req.body.VIP
+            VIP: req.body.VIP,
+            General:req.body.General
         })
 
         seats.save()
