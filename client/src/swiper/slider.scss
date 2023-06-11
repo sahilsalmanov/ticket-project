@@ -1,12 +1,33 @@
 .swiper-wrapper {
   .swiper-slide {
-    // &-active {
-    //   transform: scale(1.3) !important;
-    // }
+    transition: 0.4s;
+    transform: scale(0.8);
+    position: relative;
+    &:hover {
+      .overlay {
+        transition: 0.4s;
+        transform: translateY(0);
+      }
+    }
+    &-next {
+      transform: scale(1.1) !important;
+      box-shadow: 0px 10px 5px rgba(61, 55, 241, 1);
+    }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      cursor: pointer;
     }
   }
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 227, 227, 0.362);
+  pointer-events: none;
 }

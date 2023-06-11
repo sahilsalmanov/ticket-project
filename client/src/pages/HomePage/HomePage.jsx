@@ -3,6 +3,8 @@ import Header from "../../components/Header/Header";
 import { Slider } from "../../swiper/Swiper";
 import "./homepage.scss";
 export function HomePage() {
+  // 6 category
+  // 3 data per category
   return (
     <>
       <Header />

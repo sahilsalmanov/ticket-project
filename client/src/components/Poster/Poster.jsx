@@ -1,11 +1,8 @@
 import "./poster.scss";
-import img from "./bts.png";
 export default function Poster() {
   return (
     <div className="poster">
-      <div className="poster__img">
-        <img src={img} alt="" />
-      </div>
+      <div className="poster__img">{/* <img src={img} alt="" /> */}</div>
       <div className="poster__details">
         <div className="poster__details-title">
           <h1>SBS MTV The Kpop Show Ticket Package</h1>
