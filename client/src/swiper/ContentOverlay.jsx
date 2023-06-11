@@ -6,7 +6,7 @@ function ContentOverlay({ item }) {
       <p>
         {item.startTime} -- {item.finishTime}
       </p>
-      <span>start price : {item.minimumPrice}</span>
+      <span>start price : {item.minimumPrice} AZN </span>
       <b>For More Information Click Here...</b>
     </>
   );

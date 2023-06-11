@@ -4,7 +4,7 @@ export default function Poster() {
     <div className="poster">
       <div className="poster__details">
         <div className="poster__details-title">
-          <h1>SBS MTV The Kpop Show Ticket Package</h1>
+          <h1>Get the tickets and lets the fun begin on one click</h1>
         </div>
         <div className="poster__details-description">
           <p>

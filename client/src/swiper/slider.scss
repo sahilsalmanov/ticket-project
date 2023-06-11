@@ -2,10 +2,9 @@
   .swiper-slide {
     height: 300px;
     transition: 0.4s;
-    transform: scale(0.7);
+    transform: scale(0.6);
     position: relative;
     overflow: hidden;
-    box-shadow: 2px 2px 17px -6px rgb(139, 8, 8);
 
     &:hover {
       .overlay {
@@ -14,7 +13,8 @@
       }
     }
     &-next {
-      transform: scale(1) !important;
+      transform: scale(0.9) !important;
+      box-shadow: 2px 2px 17px -6px rgb(82, 0, 0);
     }
     img {
       width: 100%;
@@ -36,21 +36,22 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  text-align: center;
   h2 {
-    font-size: 30px;
+    font-size: 25px;
     color: blue;
     margin-bottom: 20px;
   }
   p {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: red;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   span {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   b {
     font-size: 20px;

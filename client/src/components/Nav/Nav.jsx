@@ -6,12 +6,12 @@ export default function Nav() {
   return (
     <ul className="menu">
       <div className="menu__logo">
-        <img src={logo} alt="" />
+        <img src={logo} alt="logo" />
       </div>
       <div className="menu__list">
         {categories.map(({ _id, type }) => (
           <li key={_id}>
-            <a href="#">{type}</a>
+            <a href={`#${type}`}>{type}</a>
           </li>
         ))}
       </div>
