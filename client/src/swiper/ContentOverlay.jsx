@@ -1,8 +1,13 @@
-function ContentOverlay({ title, desc }) {
+/* eslint-disable react/prop-types */
+function ContentOverlay({ item }) {
   return (
     <>
-      <h1>{title}</h1>
-      <p>{desc}</p>
+      <h2>{item.name}</h2>
+      <p>
+        {item.startTime} -- {item.finishTime}
+      </p>
+      <span>start price : {item.minimumPrice}</span>
+      <b>For More Information Click Here...</b>
     </>
   );
 }

@@ -1,8 +1,12 @@
 .swiper-wrapper {
   .swiper-slide {
+    height: 300px;
     transition: 0.4s;
-    transform: scale(0.8);
+    transform: scale(0.7);
     position: relative;
+    overflow: hidden;
+    box-shadow: 2px 2px 17px -6px rgb(139, 8, 8);
+
     &:hover {
       .overlay {
         transition: 0.4s;
@@ -10,12 +14,11 @@
       }
     }
     &-next {
-      transform: scale(1.1) !important;
+      transform: scale(1) !important;
     }
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       cursor: pointer;
     }
   }
@@ -27,6 +30,31 @@
   transform: translateY(100%);
   width: 100%;
   height: 100%;
-  background-color: rgba(240, 227, 227, 0.362);
+  background-color: rgba(240, 227, 227, 0.762);
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  h2 {
+    font-size: 30px;
+    color: blue;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 20px;
+  }
+  span {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  b {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
 }

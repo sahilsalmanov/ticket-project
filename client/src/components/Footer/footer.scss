@@ -19,6 +19,8 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  box-shadow: 3px -4px 21px #0a075f;
+  margin-top: 3rem;
   li {
     margin-bottom: 1rem;
   }
@@ -95,104 +97,102 @@ html {
     }
   }
 }
-@media screen and (min-width: 1400px){
-    .footer{
-       font-size: 1.7rem;
-    background-color: #0a075f;}
-    //    background-color: #f5167e;
-    //    height: 35rem;
-    //    &_info-forth {
-    //     p {
-    //         width: 28rem;
-    //         margin-bottom: 2rem;
-    //       }
-    //     .button{
-    //    input{
-    //     width: 28rem;
-    //     height: 4rem;
-    //    }
-    //    button{
-    //     width: 9rem;
-    //     height: 2.5rem;
-    //     font-size: 0.8rem;
-    //    }
-    // } }  }
-
+@media screen and (min-width: 1400px) {
+  .footer {
+    font-size: 1.7rem;
+    background-color: #0a075f;
+  }
+  //    background-color: #f5167e;
+  //    height: 35rem;
+  //    &_info-forth {
+  //     p {
+  //         width: 28rem;
+  //         margin-bottom: 2rem;
+  //       }
+  //     .button{
+  //    input{
+  //     width: 28rem;
+  //     height: 4rem;
+  //    }
+  //    button{
+  //     width: 9rem;
+  //     height: 2.5rem;
+  //     font-size: 0.8rem;
+  //    }
+  // } }  }
 }
-@media (min-width: 1000px) and (max-width: 1400px){
-    .footer{
-       font-size: 1.4rem;
-       background-color: #0a075f;
-       height: 40rem;
-       &_info-forth {
-        p {
-            width: 28rem;
-            margin-bottom: 2rem;
-          }
-        .button{
-       input{
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .footer {
+    font-size: 1.4rem;
+    background-color: #0a075f;
+    height: 40rem;
+    &_info-forth {
+      p {
         width: 28rem;
-        height: 4rem;
-        &::placeholder{
+        margin-bottom: 2rem;
+      }
+      .button {
+        input {
+          width: 28rem;
+          height: 4rem;
+          &::placeholder {
             font-size: 0.9rem;
+          }
         }
-       }
-       button{
-        width: 9rem;
-        height: 2.5rem;
-        font-size: 0.8rem;
-       }
-    } }  }
-
-}
-@media screen and (max-width: 1000px) {
-    .footer {
-      justify-content: space-around;
-      background-color: #0a075f;
-      height: 50rem;
-    }
-  
-    .footer > div:last-child {
-      
-      flex-basis: 100%;
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      margin-top: -3rem;
-            p{
-                text-align: center;
-            }
+        button {
+          width: 9rem;
+          height: 2.5rem;
+          font-size: 0.8rem;
+        }
+      }
     }
   }
-    //    font-size: 1rem;
-    //    background-color: #0a075f;
-    //    &_info-first{
-    //         // .logo{
-    //         //     height: 1rem;
-    //         // }
-    //         .text{
-    //             width: 20rem;
-    //         }
-    //     }
-       
-    //    &_info-forth {
-    //     p{
-    //         width: 20rem;
-    //     }
-    //     .button{
-    //    input{
-    //     width: 22rem;
-    //     height: 3.6rem;
-    //     &::placeholder{
-    //         font-size: 0.8rem;
-    //     }
-    //    }
-    //    button{
-    //     width: 5rem;
-    //     height: 1.8rem;
-    //     font-size: 0.6rem;
-    //    }
-    // } }  }
-    
+}
+@media screen and (max-width: 1000px) {
+  .footer {
+    justify-content: space-around;
+    background-color: #0a075f;
+    height: 50rem;
+  }
 
+  .footer > div:last-child {
+    flex-basis: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -3rem;
+    p {
+      text-align: center;
+    }
+  }
+}
+//    font-size: 1rem;
+//    background-color: #0a075f;
+//    &_info-first{
+//         // .logo{
+//         //     height: 1rem;
+//         // }
+//         .text{
+//             width: 20rem;
+//         }
+//     }
+
+//    &_info-forth {
+//     p{
+//         width: 20rem;
+//     }
+//     .button{
+//    input{
+//     width: 22rem;
+//     height: 3.6rem;
+//     &::placeholder{
+//         font-size: 0.8rem;
+//     }
+//    }
+//    button{
+//     width: 5rem;
+//     height: 1.8rem;
+//     font-size: 0.6rem;
+//    }
+// } }  }

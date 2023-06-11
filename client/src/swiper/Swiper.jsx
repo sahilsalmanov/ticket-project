@@ -1,25 +1,16 @@
+/* eslint-disable react/prop-types */
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import "swiper/css";
 import "./slider.scss";
-import { PropTypes } from "prop-types";
-import test from "../../assets/img/test.png";
 import ContentOverlay from "./ContentOverlay";
-export const Slider = ({ delay }) => {
-  const breakpoints = {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    480: {
-      slidesPerView: 2,
-      spaceBetween: 15,
-    },
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 20,
-    },
-  };
+import { breakpoints } from "../constants/consts";
+import { useSelector } from "react-redux";
+export const Slider = ({ id }) => {
+  const { events } = useSelector((state) => state.categoryReducer);
+  const filtered = events.filter((q) => q.category._id === id);
+  const delay = Math.floor(Math.random() * 1500 + 2000);
+  console.log(filtered);
   return (
     <div>
       <Swiper
@@ -31,64 +22,20 @@ export const Slider = ({ delay }) => {
         }}
         modules={[Autoplay, Pagination, Navigation]}
       >
-        <SwiperSlide>
-          <div className="overlay">
-            <ContentOverlay />
-          </div>
-          <img src={test} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="overlay">
-            <ContentOverlay />
-          </div>
-          <img src={test} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="overlay">
-            <ContentOverlay />
-          </div>
-          <img src={test} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="overlay">
-            <ContentOverlay />
-          </div>
-          <img src={test} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="overlay">
-            <ContentOverlay />
-          </div>
-          <img src={test} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="overlay">
-            <ContentOverlay />
-          </div>
-          <img src={test} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="overlay">
-            <ContentOverlay />
-          </div>
-          <img src={test} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="overlay">
-            <ContentOverlay />
-          </div>
-          <img src={test} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="overlay">
-            <ContentOverlay />
-          </div>
-          <img src={test} />
-        </SwiperSlide>
+        {filtered.map((item) => {
+          const img = item.imagePath.split("3000").join("3000/");
+          return (
+            <>
+              <SwiperSlide key={item._id}>
+                <div className="overlay">
+                  <ContentOverlay item={item} />
+                </div>
+                <img src={img} />
+              </SwiperSlide>
+            </>
+          );
+        })}
       </Swiper>
     </div>
   );
-};
-Slider.propTypes = {
-  delay: PropTypes.Number,
 };
