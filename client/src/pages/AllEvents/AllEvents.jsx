@@ -9,7 +9,6 @@ export default function AllEvents() {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [filterLoc, setFilterLoc] = useState("all");
   const [dateFilter, setDateFilter] = useState(null);
-
   const { events, categories } = useSelector((state) => state.categoryReducer);
   const location = [...new Set([...events.map((q) => q.locationName)])];
   const filteredData = events.filter((q) => {
@@ -17,7 +16,6 @@ export default function AllEvents() {
     const filterDate = dateFilter
       ? moment(dateFilter).format("YYYY-MM-DD")
       : null;
-
     return (
       q.name.toLowerCase().includes(value.toLowerCase()) &&
       (categoryFilter === "all" || q.category.type === categoryFilter) &&
@@ -29,16 +27,11 @@ export default function AllEvents() {
     e.preventDefault();
     setDateFilter(null);
   };
-
   return (
     <div className="container" style={{ marginTop: "100px" }}>
       <form className="form-control">
         <input type="text" onChange={(e) => setValue(e.target.value)} />
-        <select
-          name=""
-          id=""
-          onChange={(e) => setCategoryFilter(e.target.value)}
-        >
+        <select onChange={(e) => setCategoryFilter(e.target.value)}>
           <option value="all">All</option>
           {categories.map((q) => (
             <option value={q.type} key={q._id}>

@@ -8,6 +8,7 @@ import {
   removeFromFavorites,
 } from "../../store/CategorySlice/categorySlice";
 import InnerNav from "../../components/Nav/InnerNav";
+import moment from "moment";
 
 function Details() {
   const dispatch = useDispatch();
@@ -23,25 +24,32 @@ function Details() {
     }
   };
 
-  const img = event.imagePath.split("3000").join("3000/");
-  const check = favorites.find((q) => q._id == id);
+  const img = event?.imagePath.split("3000").join("3000/");
+  const check = favorites?.find((q) => q._id == id);
+  const localDate = moment(event?.date).local();
+  const locationHTML = event.location;
+  const srcRegex = /src="(.*?)"/;
+  const match = locationHTML.match(srcRegex);
+  const src = match && match[1];
 
   return (
     <>
       <InnerNav />
-      <div className="event-details">
-        <div className="event-info">
-          <h2>{event?.name}</h2>
-          <p className="event-date">
-            Date: {event?.date} {event.startTime}-{event.finishTime}
-          </p>
-          <p className="event-description">Description: {event?.description}</p>
-          <p>
-            Price range: {event.minimumPrice} - {event?.maxsimumPrice}AZN
-          </p>
-          <div className="ticket-section">
-            <p className="ticket-heading">Bilet Fiyatları:</p>
-            {/* <ul className="ticket-prices">
+      {event && (
+        <div className="event-details">
+          <div className="event-info">
+            <h2>{event?.name}</h2>
+            <p className="event-date">
+              {localDate?.format("YYYY-MM-DDDD")} {event?.startTime}-
+              {event.finishTime}
+            </p>
+            <p className="event-description">{event?.description}</p>
+            <p>
+              Price range: {event.minimumPrice} - {event?.maxsimumPrice}AZN
+            </p>
+            <div className="ticket-section">
+              <p className="ticket-heading">Bilet Fiyatları:</p>
+              {/* <ul className="ticket-prices">
               {event?.seats.map((ticket, index) => (
                 <li key={index} className="ticket-item">
                   <span className="ticket-category">{ticket.category}:</span>{" "}
@@ -50,23 +58,28 @@ function Details() {
                 </li>
               ))}
             </ul> */}
+            </div>
+            <button
+              style={{
+                cursor: "pointer",
+                backgroundColor: "purple",
+                color: "white",
+                padding: "10px",
+                borderRadius: "10px",
+              }}
+              onClick={() => AddFav(id)}
+            >
+              {!check ? "Add to Favourites" : "Remove from Favorites"}
+            </button>
+            <p style={{ marginTop: "20px" }}>Location: {event?.locationName}</p>
+            <iframe src={src}></iframe>
           </div>
-          <button
-            style={{
-              cursor: "pointer",
-              backgroundColor: "purple",
-              color: "white",
-              padding: "10px",
-              borderRadius: "10px",
-            }}
-            onClick={() => AddFav(id)}
-          >
-            {!check ? "Add to Favourites" : "Remove from Favorites"}
-          </button>
-          <p style={{ marginTop: "20px" }}>Location: {event?.locationName}</p>
+          <div className="img-cont">
+            <img src={img} alt="" />
+          </div>
         </div>
-        <img src={img} alt="" />
-      </div>
+      )}
+
       <Footer />
     </>
   );

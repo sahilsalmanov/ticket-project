@@ -1,4 +1,4 @@
-import "./Login.css";
+import "./Login.scss";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -12,7 +12,6 @@ function Login() {
       <div className="form">
         <form noValidate>
           <span>Login</span>
-
           <input
             type="email"
             name="email"

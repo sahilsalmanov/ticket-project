@@ -1,100 +1,90 @@
-const { Events } = require("../models/eventsModel")
+const { Events } = require("../models/eventsModel");
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
 const path = require("path");
 
-
 const eventsController = {
-    getAll: (req, res) => {
+  getAll: (req, res) => {
+    Events.find()
+      .populate([{ path: "seats" }, { path: "category" }])
+      .then((data) => {
+        res.json(data);
+      })
+      .catch((err) => {
+        res.status(500).json(err);
+      });
+  },
+  getById: (req, res) => {
+    let id = req.params.id;
 
-        Events.find()
-        .populate([
-            { path: "seats" },
-            { path: "category" }
-        ])
-            .then(data => {
-                res.json(data);
-            })
-            .catch(err => {
-                res.status(500).json(err)
-            })
+    Events.findById(id)
+      .populate([{ path: "seats" }, { path: "category" }])
+      .then((data) => {
+        if (data) res.json(data);
+        else res.status(404).json({ msg: "Not found!" });
+      })
+      .catch((err) => {
+        res.status(500).json(err);
+      });
+  },
+  add: async (req, res) => {
+    try {
+      const file = req.files.imagePath;
+      const namePic = uuidv4() + ".jpeg";
+      const path = __dirname + "/.." + "/imgs/" + namePic;
+      await file.mv(path);
 
-    },
-    getById: (req, res) => {
-        let id = req.params.id;
+      const event = new Events({
+        name: req.body.name,
+        category: req.body.category,
+        description: req.body.description,
+        locationName: req.body.locationName,
+        location: req.body.location,
+        date: req.body.date,
+        ticket: req.body.ticket,
+        minimumPrice: req.body.minimumPrice,
+        maxsimumPrice: req.body.maxsimumPrice,
+        seats: req.body.seats,
+        startTime: req.body.startTime,
+        finishTime: req.body.finishTime,
+        popular: req.body.popular,
+        imagePath: process.env.BASE_URI + namePic,
+      });
 
-        Events.findById(id)
-            .then(data => {
-                if (data)
-                    res.json(data);
-                else
-                    res.status(404).json({ 'msg': 'Not found!' })
-            })
-            .catch(err => {
-                res.status(500).json(err)
-            })
-    },
-    add: async (req, res) => {
-        try {
-          const file = req.files.imagePath;
-          const namePic = uuidv4() + ".jpeg";
-          const path = __dirname + "/.." + "/imgs/" + namePic;
-          await file.mv(path);
-    
-          const event = new Events({
-                    name: req.body.name,
-                    category: req.body.category,
-                    description: req.body.description,
-                    locationName: req.body.locationName,
-                    location: req.body.location,
-                    date: req.body.date,
-                    ticket: req.body.ticket,
-                    minimumPrice: req.body.minimumPrice,
-                    maxsimumPrice: req.body.maxsimumPrice,
-                    seats: req.body.seats,
-                    startTime: req.body.startTime,
-                    finishTime: req.body.finishTime,
-                    popular: req.body.popular,
-                    imagePath: process.env.BASE_URI + namePic,
-          });
-    
-          await event.save();
-          res.send("Success!!");
-        } catch (err) {
-          res.status(500).json(err);
-        }
-      },
-    deleteById: (req, res) => {
-
-        let id = req.params.id;
-
-        Events.findByIdAndDelete(id)
-            .then(data => {
-                res.json(data)
-            })
-            .catch(err => {
-                res.status(500).json(err)
-            })
-    },
-    update: (req, res) => {
-        let id = req.params.id;
-
-        Events.findById(id)
-            .then(data => {
-                data.event = req.body.event;
-
-                data.save();
-
-                res.json(data);
-            })
-            .catch(err => {
-                res.status(500).json(err);
-            })
-
+      await event.save();
+      res.send("Success!!");
+    } catch (err) {
+      res.status(500).json(err);
     }
-}
+  },
+  deleteById: (req, res) => {
+    let id = req.params.id;
 
+    Events.findByIdAndDelete(id)
+      .then((data) => {
+        res.json(data);
+      })
+      .catch((err) => {
+        res.status(500).json(err);
+      });
+  },
+  update: (req, res) => {
+    let id = req.params.id;
+
+    Events.findById(id)
+      .then((data) => {
+        data.event = req.body.event;
+
+        data.save();
+
+        res.json(data);
+      })
+      .catch((err) => {
+        res.status(500).json(err);
+      });
+  },
+};
 
 module.exports = {
-    eventsController
-}
+  eventsController,
+};
