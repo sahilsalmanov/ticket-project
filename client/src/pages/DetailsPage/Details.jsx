@@ -3,8 +3,10 @@ import Footer from "../../components/Footer/Footer";
 import Nav from "../../components/Nav/Nav";
 import "./details.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavorites } from "../../store/CategorySlice/categorySlice";
-import Iframe from "react-iframe";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../store/CategorySlice/categorySlice";
 
 function Details() {
   const dispatch = useDispatch();
@@ -16,14 +18,12 @@ function Details() {
     if (!check) {
       dispatch(addToFavorites(id));
     } else {
-      alert("no");
+      dispatch(removeFromFavorites(id));
     }
   };
-
+  const check = favorites.find((q) => q._id == id);
   return (
     <>
-      <Nav />
-
       <div className="event-details">
         <div className="event-info">
           <h2>{event?.name}</h2>
@@ -42,7 +42,7 @@ function Details() {
             </ul>
           </div>
           <button style={{ cursor: "pointer" }} onClick={() => AddFav(id)}>
-            Add to Favourites
+            {!check ? "Add to Favourites" : "Remove from Favorites"}
           </button>
           {event?.location}
         </div>

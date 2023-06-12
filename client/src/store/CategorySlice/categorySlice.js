@@ -3,7 +3,7 @@ import axios from "axios";
 const initialState = {
   categories: [],
   events: [],
-  favorites: [],
+  favorites: JSON.parse(localStorage.getItem("favorites")) || [],
 };
 export const getAllCategories = createAsyncThunk("category", async () => {
   const { data } = await axios.get("http://localhost:3000/api/category");
@@ -19,8 +19,19 @@ const categorySlice = createSlice({
   reducers: {
     addToFavorites: (state, { payload }) => {
       const obj = state.events.find((q) => q._id == payload);
-
+      localStorage.setItem(
+        "favorites",
+        JSON.stringify([...state.favorites, obj])
+      );
       state.favorites = [...state.favorites, obj];
+    },
+    removeFromFavorites: (state, { payload }) => {
+      localStorage.removeItem("favorites");
+      localStorage.setItem(
+        "favorites",
+        JSON.stringify([...state.favorites.filter((q) => q._id != payload)])
+      );
+      state.favorites = [...state.favorites.filter((q) => q._id !== payload)];
     },
   },
   extraReducers: (builder) => {
@@ -34,4 +45,4 @@ const categorySlice = createSlice({
 });
 
 export const categoryReducer = categorySlice.reducer;
-export const { addToFavorites } = categorySlice.actions;
+export const { addToFavorites, removeFromFavorites } = categorySlice.actions;
