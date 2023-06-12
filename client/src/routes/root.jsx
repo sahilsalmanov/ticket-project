@@ -1,7 +1,7 @@
 import AllEvents from "../pages/AllEvents/AllEvents";
 import Favorites from "../pages/Favorites/Favorites";
 import { HomePage } from "../pages/HomePage/HomePage";
-import Login from '../Login/Login'
+import Login from "../Login/Login";
 import Register from "../Login/Register";
 import Details from "../pages/DetailsPage/Details";
 

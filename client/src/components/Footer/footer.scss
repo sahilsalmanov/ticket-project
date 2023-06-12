@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=DynaPuff&family=Mulish:wght@200&family=Prompt:wght@100&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -11,8 +10,7 @@ html {
 }
 .footer {
   width: 100%;
-  height: 43rem;
-  background-color: #0a075f;
+  background-color: #222324 !important;
   font-family: "DM Sans", sans-serif;
   font-size: 1.4rem;
   color: white;
@@ -124,7 +122,6 @@ html {
 @media (min-width: 1000px) and (max-width: 1400px) {
   .footer {
     font-size: 1.4rem;
-    background-color: #0a075f;
     height: 40rem;
     &_info-forth {
       p {
