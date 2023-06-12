@@ -1,15 +1,9 @@
 import { useSelector } from "react-redux";
 import moment from "moment";
 import Cards from "../../components/Cards/Cards";
-<<<<<<< HEAD
-import "../../components/cards/cards.scss"
-import InnerNav from "../../components/Nav/InnerNav";
-import Footer from "../../components/Footer/Footer";
-=======
 import "../../components/cards/cards.scss";
 import "./allevents.scss";
 import { useState } from "react";
->>>>>>> 69ddd780717142da73721c89594cbb51a8d2823f
 export default function AllEvents() {
   const [value, setValue] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
@@ -37,17 +31,6 @@ export default function AllEvents() {
   };
 
   return (
-<<<<<<< HEAD
-  <>
-   <InnerNav/>
-   <div className="container">
-   {events.map((event) => {
-     return <Cards key={event._id} {...event} />;
-   })}
- </div>
- <Footer/>
-  </>
-=======
     <div className="container" style={{ marginTop: "100px" }}>
       <form className="form-control">
         <input type="text" onChange={(e) => setValue(e.target.value)} />
@@ -78,6 +61,5 @@ export default function AllEvents() {
         return <Cards key={event._id} {...event} />;
       })}
     </div>
->>>>>>> 69ddd780717142da73721c89594cbb51a8d2823f
   );
 }
