@@ -3,6 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import Nav from "../../components/Nav/Nav";
 import "./details.scss";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
   addToFavorites,
   removeFromFavorites,
