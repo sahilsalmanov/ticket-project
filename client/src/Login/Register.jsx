@@ -115,6 +115,13 @@ function Register() {
             <div className="error">{formik.errors.confirmPassword}</div>
           ) : null}
 
+<<<<<<< HEAD
+        <button  onClick={register} style={{ marginBottom: '30px' }} type="submit">
+          Sign Up
+        </button>
+        <a onClick={toLogin} href="">Do you have any account?</a>
+      </form>
+=======
           <button style={{ marginBottom: "30px" }} type="submit">
             Sign Up
           </button>
@@ -123,6 +130,7 @@ function Register() {
           </a>
         </form>
       </div>
+>>>>>>> 69ddd780717142da73721c89594cbb51a8d2823f
     </div>
   );
 }
