@@ -19,37 +19,38 @@ html {
   padding-left: 17rem;
   padding-right: 17rem;
   &_card {
-    border:0.4rem rgb(255, 255, 255) solid;
+    border: 0.4rem rgb(255, 255, 255) solid;
     width: 40rem;
     height: 42rem;
     margin-bottom: 5rem;
     overflow: hidden;
-    position:relative;
+    position: relative;
     border-radius: 0 3rem;
-    .span{
+    .span {
       position: absolute;
-      background: radial-gradient(circle, rgba(140,109,199,1) 0%, rgba(31,80,119,1) 100%);
-      width: 9rem;
-      height: 6rem;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    border-radius: 2rem;
-    border: 0.4rem solid white;
-    text-align: center;
-    color:white;
-    padding-top: 0.5rem;
-    padding-left: 0.3rem; 
-    p{
-      font-family:"DM Sans", sans-serif;
-      font-size: 1.6rem;
-    }
+      background: radial-gradient(
+        circle,
+        rgba(140, 109, 199, 1) 0%,
+        rgba(31, 80, 119, 1) 100%
+      );
+      top: 10px;
+      left: 10px;
+      border-radius: 2rem;
+      border: 0.4rem solid white;
+      text-align: center;
+      color: white;
+      padding: 5px 20px;
+      p {
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.6rem;
+      }
     }
     // background-color: cadetblue;
     &-img {
-      height: 30rem; 
+      height: 30rem;
       img {
         width: 100%;
-        height: 30rem; 
+        height: 30rem;
       }
     }
 
@@ -70,23 +71,26 @@ html {
         h1 {
           font-size: 1.8rem;
         }
-        p
-        {
-          font-family: "Mulish", sans-serif;}
+        p {
+          font-family: "Mulish", sans-serif;
+        }
       }
 
-      button{
-        background: radial-gradient(circle, rgba(140,109,199,1) 0%, rgba(31,80,119,1) 100%);
-       border: 0.4rem solid white;
-      //  margin-top: 2rem;
-       margin:auto;
-       width: 8rem;
-       height: 5rem;
-       color: white;
-       border-radius: 2rem;
-       font-family: "DM Sans", sans-serif;
-       padding-bottom: 0.2rem;
-
+      button {
+        background: radial-gradient(
+          circle,
+          rgba(140, 109, 199, 1) 0%,
+          rgba(31, 80, 119, 1) 100%
+        );
+        border: 0.4rem solid white;
+        //  margin-top: 2rem;
+        margin: auto;
+        width: 8rem;
+        height: 5rem;
+        color: white;
+        border-radius: 2rem;
+        font-family: "DM Sans", sans-serif;
+        padding-bottom: 0.2rem;
       }
     }
   }
@@ -114,8 +118,7 @@ html {
     padding-left: 8rem;
     padding-right: 8rem;
     &_card {
-      width: 25rem;
-      height: 26rem;
+      width: 350px;
     }
   }
 }
