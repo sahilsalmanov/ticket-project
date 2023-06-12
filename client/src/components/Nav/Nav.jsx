@@ -22,6 +22,9 @@ export default function Nav() {
             <a href={`#${type}`}>{type}</a>
           </li>
         ))}
+         <li>
+          <Link to="/login">Login</Link>
+        </li>
       </ul>
     </ul>
   );
