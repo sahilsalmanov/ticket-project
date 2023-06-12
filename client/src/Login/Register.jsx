@@ -125,7 +125,7 @@ function Register2() {
           <div className="error">{formik.errors.confirmPassword}</div>
         ) : null}
 
-        <button  style={{ marginBottom: '30px' }} type="submit">
+        <button  onClick={register} style={{ marginBottom: '30px' }} type="submit">
           Sign Up
         </button>
         <a onClick={toLogin} href="">Do you have any account?</a>
