@@ -13,50 +13,80 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  // background-color: chartreuse;
   font-family: "DM Sans", sans-serif;
   padding-top: 8rem;
+  padding-bottom: 8rem;
   padding-left: 17rem;
   padding-right: 17rem;
   &_card {
-    width: 30rem;
-    height: 31rem;
+    border:0.4rem rgb(255, 255, 255) solid;
+    width: 40rem;
+    height: 42rem;
+    margin-bottom: 5rem;
     overflow: hidden;
+    position:relative;
+    border-radius: 0 3rem;
+    .span{
+      position: absolute;
+      background: radial-gradient(circle, rgba(140,109,199,1) 0%, rgba(31,80,119,1) 100%);
+      width: 9rem;
+      height: 6rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    border-radius: 2rem;
+    border: 0.4rem solid white;
+    text-align: center;
+    color:white;
+    padding-top: 0.5rem;
+    padding-left: 0.3rem; 
+    p{
+      font-family:"DM Sans", sans-serif;
+      font-size: 1.6rem;
+    }
+    }
     // background-color: cadetblue;
     &-img {
+      height: 30rem; 
       img {
         width: 100%;
-        height: 18rem;
+        height: 30rem; 
       }
     }
 
     &-text {
       display: flex;
       justify-content: start;
+      // align-items: center;
+      // text-align: center;
       font-size: 1.6rem;
-      margin: 1rem 2.3rem;
+      margin: 3rem 2.3rem;
+      color: white;
       span {
         height: 3.7rem;
-        width: 3.7rem;
+        // width: 3.7rem;
         align-items: baseline;
+        width: 100%;
+        // text-align: center;
         h1 {
-          font-size: 2.8rem;
+          font-size: 1.8rem;
         }
+        p
+        {
+          font-family: "Mulish", sans-serif;}
       }
 
-      &-desc {
-        margin-left: 2rem;
+      button{
+        background: radial-gradient(circle, rgba(140,109,199,1) 0%, rgba(31,80,119,1) 100%);
+       border: 0.4rem solid white;
+      //  margin-top: 2rem;
+       margin:auto;
+       width: 8rem;
+       height: 5rem;
+       color: white;
+       border-radius: 2rem;
+       font-family: "DM Sans", sans-serif;
+       padding-bottom: 0.2rem;
 
-        h2 {
-          font-size: 1.6rem;
-          font-weight: 700;
-        }
-
-        p {
-          font-size: 1.4rem;
-          color: #6a6a6a;
-          font-weight: 400;
-        }
       }
     }
   }
@@ -71,18 +101,16 @@ html {
 // }
 //     }
 // }
-@media (min-width: 1000px) and (max-width: 1440px) {
-  .container {
-    background-color: deeppink;
-    &_card {
-      // width: 15rem;
-      // height: 16rem;
-    }
-  }
-}
+// @media (min-width: 1000px) and (max-width: 1440px) {
+//   .container {
+//     &_card {
+//       // width: 15rem;
+//       // height: 16rem;
+//     }
+//   }
+// }
 @media (min-width: 1000px) and (max-width: 1300px) {
   .container {
-    background-color: rgb(20, 90, 255);
     padding-left: 8rem;
     padding-right: 8rem;
     &_card {

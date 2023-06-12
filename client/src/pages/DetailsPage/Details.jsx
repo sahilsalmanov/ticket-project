@@ -4,7 +4,6 @@ import Nav from "../../components/Nav/Nav";
 import "./details.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { addToFavorites } from "../../store/CategorySlice/categorySlice";
-import Iframe from "react-iframe";
 
 function Details() {
   const dispatch = useDispatch();
