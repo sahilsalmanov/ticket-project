@@ -33,7 +33,7 @@ function Login() {
             counter++;
           }
         });
-        if (counter == 3) {
+        if (counter == a.length) {
           alert("Email or password is invalid");
         }
       })
