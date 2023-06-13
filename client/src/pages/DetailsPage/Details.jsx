@@ -9,8 +9,10 @@ import {
 } from "../../store/CategorySlice/categorySlice";
 import InnerNav from "../../components/Nav/InnerNav";
 import moment from "moment";
+import SignOutNav from "../../components/Nav/SignOutNav";
 
 function Details() {
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   const dispatch = useDispatch();
   const { id } = useParams();
   const { events, favorites } = useSelector((state) => state.categoryReducer);
@@ -27,6 +29,7 @@ function Details() {
   const img = event?.imagePath.split("3000").join("3000/");
   const check = favorites?.find((q) => q._id == id);
   const localDate = moment(event?.date).local();
+  console.log('localdate',localDate)
   const locationHTML = event.location;
   const srcRegex = /src="(.*?)"/;
   const match = locationHTML.match(srcRegex);
@@ -34,21 +37,22 @@ function Details() {
 
   return (
     <>
-      <InnerNav />
+      {isLoggedIn ? <SignOutNav /> : <InnerNav />}
       {event && (
         <div className="event-details">
           <div className="event-info">
             <h2>{event?.name}</h2>
             <p className="event-date">
-              {localDate?.format("YYYY-MM-DDDD")} {event?.startTime}-
+              {localDate?.format("YYYY-MM-DD")} {event?.startTime}-
               {event.finishTime}
             </p>
             <p className="event-description">{event?.description}</p>
-            <p>
-              Price range: {event.minimumPrice} - {event?.maxsimumPrice}AZN
-            </p>
+            
             <div className="ticket-section">
-              <p className="ticket-heading">Bilet Fiyatları:</p>
+              <p className="ticket-heading">
+              <p>
+              Price range: {event.minimumPrice} - {event?.maxsimumPrice}AZN
+            </p></p>
               {/* <ul className="ticket-prices">
               {event?.seats.map((ticket, index) => (
                 <li key={index} className="ticket-item">

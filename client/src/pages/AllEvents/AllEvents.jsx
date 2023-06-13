@@ -4,7 +4,11 @@ import Cards from "../../components/Cards/Cards";
 import "../../components/cards/cards.scss";
 import "./allevents.scss";
 import { useState } from "react";
+import InnerNav from '../../components/Nav/InnerNav'
+import Footer from "../../components/Footer/Footer";
+import SignOutNav from "../../components/Nav/SignOutNav";
 export default function AllEvents() {
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   const [value, setValue] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [filterLoc, setFilterLoc] = useState("all");
@@ -28,7 +32,9 @@ export default function AllEvents() {
     setDateFilter(null);
   };
   return (
-    <div className="container" style={{ marginTop: "100px" }}>
+   <>
+   {isLoggedIn ? <SignOutNav /> : <InnerNav/>}
+   <div className="container" style={{ marginTop: "100px" }}>
       <form className="form-control">
         <input type="text" onChange={(e) => setValue(e.target.value)} />
         <select onChange={(e) => setCategoryFilter(e.target.value)}>
@@ -54,5 +60,7 @@ export default function AllEvents() {
         return <Cards key={event._id} {...event} />;
       })}
     </div>
+    <Footer/>
+   </>
   );
 }

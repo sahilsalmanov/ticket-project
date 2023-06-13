@@ -3,8 +3,14 @@ import logo from "./logo.png";
 import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import Favorites from "../../pages/Favorites/Favorites";
-export default function Nav() {
+export default function MainNavOut() {
   const { categories } = useSelector((state) => state.categoryReducer);
+
+  function signout() {
+    localStorage.setItem('isLoggedIn', false);
+    navigate('/login')
+    
+}
   return (
     <ul className="menu">
       <NavLink className="menu__logo" to="/">
@@ -17,18 +23,13 @@ export default function Nav() {
         <li>
           <Link to="/favorites">Favorites</Link>
         </li>
-        {/* {categories.map(({ _id, type }) => (
+        {categories.map(({ _id, type }) => (
           <li key={_id}>
             <a href={`#${type}`}>{type}</a>
           </li>
-        ))} */}
-       {categories.map(({ _id, type }) => (
-  <li key={_id}>
-    <a href={`#${type.charAt(0).toUpperCase() + type.slice(1)}`}>{type.charAt(0).toUpperCase() + type.slice(1)}</a>
-  </li>
-))}
+        ))}
          <li>
-          <Link to="/login">Login</Link>
+         <Link onClick={signout} to="/login">SignOut</Link>
         </li>
       </ul>
     </ul>

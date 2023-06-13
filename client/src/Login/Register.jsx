@@ -2,6 +2,9 @@ import "./Login.scss";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import InnerNav from "../components/Nav/InnerNav";
+import Footer from "../components/Footer/Footer";
+import axios from "axios";
 
 function Register() {
   const validationSchema = Yup.object({
@@ -33,6 +36,13 @@ function Register() {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       console.log(values);
+      axios.post('http://localhost:3000/api/users', values)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
 
       navigate("/login");
     },
@@ -45,6 +55,8 @@ function Register() {
   }
 
   return (
+    <>
+    <InnerNav/>
     <div className="login">
       <div className="form">
         <form onSubmit={formik.handleSubmit} noValidate>
@@ -124,6 +136,8 @@ function Register() {
         </form>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 
