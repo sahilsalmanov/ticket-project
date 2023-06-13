@@ -12,7 +12,7 @@ import moment from "moment";
 import SignOutNav from "../../components/Nav/SignOutNav";
 
 function Details() {
-  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   const dispatch = useDispatch();
   const { id } = useParams();
   const { events, favorites } = useSelector((state) => state.categoryReducer);
@@ -29,7 +29,7 @@ function Details() {
   const img = event?.imagePath.split("3000").join("3000/");
   const check = favorites?.find((q) => q._id == id);
   const localDate = moment(event?.date).local();
-  console.log('localdate',localDate)
+  console.log("localdate", localDate);
   const locationHTML = event.location;
   const srcRegex = /src="(.*?)"/;
   const match = locationHTML.match(srcRegex);
@@ -47,12 +47,13 @@ function Details() {
               {event.finishTime}
             </p>
             <p className="event-description">{event?.description}</p>
-            
+
             <div className="ticket-section">
               <p className="ticket-heading">
-              <p>
-              Price range: {event.minimumPrice} - {event?.maxsimumPrice}AZN
-            </p></p>
+                <p>
+                  Price range: {event.minimumPrice} - {event?.maxsimumPrice}AZN
+                </p>
+              </p>
               {/* <ul className="ticket-prices">
               {event?.seats.map((ticket, index) => (
                 <li key={index} className="ticket-item">
@@ -73,7 +74,7 @@ function Details() {
               }}
               onClick={() => AddFav(id)}
             >
-              {!check ? "Add to Favourites" : "Remove from Favorites"}
+              {!check ? "Add to Favorites" : "Remove from Favorites"}
             </button>
             <p style={{ marginTop: "20px" }}>Location: {event?.locationName}</p>
             <iframe src={src}></iframe>

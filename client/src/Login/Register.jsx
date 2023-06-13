@@ -36,13 +36,14 @@ function Register() {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       console.log(values);
-      axios.post('http://localhost:3000/api/users', values)
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+      axios
+        .post("http://localhost:3000/api/users", values)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
 
       navigate("/login");
     },
@@ -50,93 +51,94 @@ function Register() {
 
   let navigate = useNavigate();
 
-  function toLogin() {
+  function toLogin(e) {
+    e.preventDefault();
     navigate("/login");
   }
 
   return (
     <>
-    <InnerNav/>
-    <div className="login">
-      <div className="form">
-        <form onSubmit={formik.handleSubmit} noValidate>
-          <span>Register</span>
-          <input
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.firstName}
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            className="form-control inp_text"
-            id="firstName"
-          />
-          {formik.touched.firstName && formik.errors.firstName ? (
-            <div className="error">{formik.errors.firstName}</div>
-          ) : null}
-          <input
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.lastName}
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            className="form-control inp_text"
-            id="lastName"
-          />
-          {formik.touched.lastName && formik.errors.lastName ? (
-            <div className="error">{formik.errors.lastName}</div>
-          ) : null}
-          <input
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-            type="email"
-            name="email"
-            placeholder="Enter email id / username"
-            className="form-control inp_text"
-            id="email"
-          />
-          {formik.touched.email && formik.errors.email ? (
-            <div className="error">{formik.errors.email}</div>
-          ) : null}
+      <InnerNav />
+      <div className="login">
+        <div className="form">
+          <form onSubmit={formik.handleSubmit} noValidate>
+            <span>Register</span>
+            <input
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.firstName}
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              className="form-control inp_text"
+              id="firstName"
+            />
+            {formik.touched.firstName && formik.errors.firstName ? (
+              <div className="error">{formik.errors.firstName}</div>
+            ) : null}
+            <input
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.lastName}
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              className="form-control inp_text"
+              id="lastName"
+            />
+            {formik.touched.lastName && formik.errors.lastName ? (
+              <div className="error">{formik.errors.lastName}</div>
+            ) : null}
+            <input
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+              type="email"
+              name="email"
+              placeholder="Enter email id / username"
+              className="form-control inp_text"
+              id="email"
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <div className="error">{formik.errors.email}</div>
+            ) : null}
 
-          <input
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.password}
-            type="password"
-            name="password"
-            placeholder="Enter password"
-            className="form-control"
-          />
-          {formik.touched.password && formik.errors.password ? (
-            <div className="error">{formik.errors.password}</div>
-          ) : null}
+            <input
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              className="form-control"
+            />
+            {formik.touched.password && formik.errors.password ? (
+              <div className="error">{formik.errors.password}</div>
+            ) : null}
 
-          <input
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.confirmPassword}
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm password"
-            className="form-control"
-          />
-          {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-            <div className="error">{formik.errors.confirmPassword}</div>
-          ) : null}
+            <input
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.confirmPassword}
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm password"
+              className="form-control"
+            />
+            {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
+              <div className="error">{formik.errors.confirmPassword}</div>
+            ) : null}
 
-          <button style={{ marginBottom: "30px" }} type="submit">
-            Sign Up
-          </button>
-          <a onClick={toLogin} href="">
-            Do you have any account?
-          </a>
-        </form>
+            <button style={{ marginBottom: "30px" }} type="submit">
+              Sign Up
+            </button>
+            <a onClick={toLogin} href="">
+              Do you have any account?
+            </a>
+          </form>
+        </div>
       </div>
-    </div>
-    <Footer/>
+      <Footer />
     </>
   );
 }
