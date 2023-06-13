@@ -1,7 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../components/Footer/Footer";
 import { removeFromFavorites } from "../../store/CategorySlice/categorySlice";
+import InnerNav from '../../components/Nav/InnerNav'
+import './Favorites.css'
+import SignOutNav from "../../components/Nav/SignOutNav";
+
 export default function Favorites() {
+
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   const dispatch = useDispatch();
   const { favorites } = useSelector((state) => state.categoryReducer);
   const removeFav = (favId) => {
@@ -10,29 +16,38 @@ export default function Favorites() {
   const len = favorites.length <= 0;
   return (
     <>
-      {len && <h1>FAVORIT YOXDU QAQA</h1>}
-      {favorites.map((fav) => {
+    {isLoggedIn ? <SignOutNav /> : <InnerNav />}
+   
+      {len && <h1>Empty</h1>}
+    <div className="general">
+    {favorites.map((fav) => {
         const img = fav.imagePath.split("3000").join("3000/");
         return (
           <>
-            <button
+            <div className="item">
+              <div className="top">
+               <img src={img} alt="" />
+              </div>
+              <div className="bottom">
+              <li  style={{  fontSize: "15px"}}>{fav.name}</li>
+              <button
               style={{
-                color: "#fff",
-                fontSize: "40px",
-                backgroundColor: "transparent",
+                fontSize: "15px",
+                backgroundColor: "yellow",
                 cursor: "pointer",
+                color: 'black'
               }}
               onClick={() => removeFav(fav._id)}
             >
               Remove
             </button>
-
-            <img src={img} alt="aa" />
-            <li>{fav.name}</li>
-            <li>{fav.description}</li>
+              </div>
+            </div>
           </>
         );
       })}
+    </div>
+     
       <Footer />
     </>
   );

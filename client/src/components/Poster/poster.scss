@@ -30,14 +30,16 @@
         cursor: pointer;
         border: none;
         margin-right: 20px;
-        padding: 18px 45px;
+        padding: 18px;
         background-color: #2116f584;
         font-size: 18px;
+        width: 90px;
       }
       &-info {
         cursor: pointer;
+        width: 120px;
         border-radius: 30px;
-        padding: 18px 45px;
+        padding: 20px;
         color: rgba(9, 16, 75, 0.532);
         font-weight: 900;
         font-size: 18px;

@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "./poster.scss";
 export default function Poster() {
+
+  let navigate = useNavigate()
   return (
     <div className="poster">
       <div className="poster__details">
@@ -13,8 +16,8 @@ export default function Poster() {
           </p>
         </div>
         <div className="poster__details-btns">
-          <button className="poster__details-btns-ticket">Get Ticket</button>
-          <button className="poster__details-btns-info">Learn More</button>
+          <button onClick={() => navigate('/favorites')}  className="poster__details-btns-ticket">Get Ticket</button>
+          <button onClick={() => navigate('/all-events')} className="poster__details-btns-info">Learn More</button>
         </div>
       </div>
     </div>
