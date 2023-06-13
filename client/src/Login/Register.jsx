@@ -6,6 +6,7 @@ import InnerNav from "../components/Nav/InnerNav";
 import Footer from "../components/Footer/Footer";
 import axios from "axios";
 
+
 function Register() {
   const validationSchema = Yup.object({
     firstName: Yup.string()
@@ -70,7 +71,7 @@ function Register() {
               type="text"
               name="firstName"
               placeholder="First Name"
-              className="form-control inp_text"
+              // className="form-control inp_text"
               id="firstName"
             />
             {formik.touched.firstName && formik.errors.firstName ? (
@@ -83,7 +84,7 @@ function Register() {
               type="text"
               name="lastName"
               placeholder="Last Name"
-              className="form-control inp_text"
+              // className="form-control inp_text"
               id="lastName"
             />
             {formik.touched.lastName && formik.errors.lastName ? (
@@ -96,7 +97,7 @@ function Register() {
               type="email"
               name="email"
               placeholder="Enter email id / username"
-              className="form-control inp_text"
+              // className="form-control inp_text"
               id="email"
             />
             {formik.touched.email && formik.errors.email ? (
@@ -110,7 +111,7 @@ function Register() {
               type="password"
               name="password"
               placeholder="Enter password"
-              className="form-control"
+              // className="form-control"
             />
             {formik.touched.password && formik.errors.password ? (
               <div className="error">{formik.errors.password}</div>
@@ -123,16 +124,17 @@ function Register() {
               type="password"
               name="confirmPassword"
               placeholder="Confirm password"
-              className="form-control"
+              // className="form-control"
             />
             {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
               <div className="error">{formik.errors.confirmPassword}</div>
             ) : null}
 
+         
             <button style={{ marginBottom: "30px" }} type="submit">
               Sign Up
             </button>
-            <a onClick={toLogin} href="">
+            <a className="account" onClick={toLogin} href="">
               Do you have any account?
             </a>
           </form>

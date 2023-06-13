@@ -1,0 +1,30 @@
+.item {
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.item img {
+  width: 300px;
+  height: 300px;
+}
+
+.general {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+li {
+  color: white;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+h1 {
+  margin-left: 50px;
+  font-size: 40px;
+}/*# sourceMappingURL=Favorites.css.map */
