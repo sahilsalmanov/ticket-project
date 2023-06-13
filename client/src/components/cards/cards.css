@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=DynaPuff&family=Mulish:wght@200&family=Prompt:wght@100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-family: "DM Sans", sans-serif;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  padding-left: 17rem;
+  padding-right: 17rem;
+}
+.container_card {
+  border: 0.4rem rgb(255, 255, 255) solid;
+  width: 40rem;
+  height: 42rem;
+  margin-bottom: 5rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0 3rem;
+}
+.container_card .span {
+  position: absolute;
+  background: radial-gradient(circle, rgb(140, 109, 199) 0%, rgb(31, 80, 119) 100%);
+  top: 10px;
+  left: 10px;
+  border-radius: 2rem;
+  border: 0.4rem solid white;
+  text-align: center;
+  color: white;
+  padding: 5px 20px;
+}
+.container_card .span p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.container_card-img {
+  height: 30rem;
+}
+.container_card-img img {
+  width: 100%;
+  height: 30rem;
+}
+.container_card-text {
+  display: flex;
+  justify-content: start;
+  font-size: 1.6rem;
+  margin: 3rem 2.3rem;
+  color: white;
+}
+.container_card-text span {
+  height: 3.7rem;
+  align-items: baseline;
+  width: 100%;
+}
+.container_card-text span h1 {
+  font-size: 1.8rem;
+}
+.container_card-text span p {
+  font-family: "Mulish", sans-serif;
+}
+.container_card-text button {
+  background: radial-gradient(circle, rgb(140, 109, 199) 0%, rgb(31, 80, 119) 100%);
+  border: 0.4rem solid white;
+  margin: auto;
+  width: 8rem;
+  height: 5rem;
+  color: white;
+  border-radius: 2rem;
+  font-family: "DM Sans", sans-serif;
+  padding-bottom: 0.2rem;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .container {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  .container_card {
+    width: 350px;
+  }
+}/*# sourceMappingURL=cards.css.map */

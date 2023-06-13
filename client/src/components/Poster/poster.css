@@ -1,0 +1,55 @@
+.poster {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.poster__details {
+  margin-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+.poster__details-title {
+  font-size: 25px;
+  font-weight: 800;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(0, 1, 61);
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.984);
+}
+.poster__details-description {
+  color: rgb(0, 1, 61);
+  font-size: 16px;
+  margin-bottom: 15rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.999);
+}
+.poster__details-btns {
+  display: flex;
+  gap: 20px;
+  min-width: 60%;
+  margin: auto;
+  justify-content: center;
+}
+.poster__details-btns-ticket {
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  background-color: rgba(33, 22, 245, 0.5176470588);
+  font-size: 16px;
+  font-weight: 900;
+  padding: 20px;
+}
+.poster__details-btns-info {
+  cursor: pointer;
+  border-radius: 30px;
+  padding: 20px;
+  font-weight: 900;
+  color: #fff;
+  font-size: 16px;
+  background-color: rgba(255, 123, 0, 0.628);
+}/*# sourceMappingURL=poster.css.map */

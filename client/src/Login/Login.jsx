@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Footer from "../components/Footer/Footer";
 import InnerNav from "../components/Nav/InnerNav";
-import "./Login.scss";
+// import "./Login.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -54,7 +54,6 @@ function Login() {
               type="email"
               name="email"
               placeholder="Enter email id / username"
-              className="form-control inp_text"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -64,11 +63,9 @@ function Login() {
               type="password"
               name="password"
               placeholder="Enter password"
-              className="form-control"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-
             <button onClick={loginSave} type="submit">
               Login
             </button>
@@ -84,3 +81,4 @@ function Login() {
 }
 
 export default Login;
+
