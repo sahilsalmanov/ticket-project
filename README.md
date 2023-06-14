@@ -24,6 +24,8 @@ Git (version 2.39.0.windows.1)
 React: (version ^18.2.0),
 
 React-redux: (version ^8.0.7)
+
+Node-Sass": (version 9.0.0)
 # Installation:
 Clone the repository: git clone https://github.com/huseynovali/Events_App.git
 Change to the project's root directory: cd Events_App
