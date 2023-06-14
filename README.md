@@ -1,4 +1,19 @@
 # Project Name: EvenTick
+# Description
+In this website, users can see events and brief information about them. With click to them, users can go to details page and see deatiled information about them. User can login and register to website. Also they can add favourites events to favourites. Users can filter events according to date, category and location.
+# Installation:
+Clone the repository: git clone https://github.com/elminm/project-code.git.
+For opening server side, firstly they must create .env document:
+CONNECTION = 'Your mongo url'
+PORT = 3000
+BASE_URI = 'http://localhost:3000',
+
+then users must write cd server => npm i => npm start
+For opening client side, they must write cd client => npm i => npm run dev
+
+# Using
+Firstly HomePage is opened
+
 # Technologies used:
 Node.js
 
@@ -9,46 +24,3 @@ React
 Redux Toolkit
 
 SASS
-# Getting Started with Create React App
-This project was bootstrapped with Create React App.
-# Available Scripts
-In the project directory, you can run:
-Runs the app in the development mode.
-Open http://localhost:5173 to view it in your browser.
-For server side open http://localhost:3000 to view it in your browser.
-# Prerequisites
-Node.js (version 18.16.0)
-
-MongoDB (version 6.0)
-
-Git (version 2.39.0.windows.1)
-
-React: (version ^18.2.0),
-
-React-redux: (version ^8.0.7)
-
-Node-Sass": (version 9.0.0)
-# Installation:
-Clone the repository: git clone https://github.com/huseynovali/Events_App.git
-Change to the project's root directory: cd Events_App
-# Install the dependencies for the server:
-cd server
-
-npm install
-# Install the dependencies for the client:
-cd client
-
-npm install
-# Configuration:
-CONNECTION = 'your mongo connection'
-PORT = 'port'
-BASE_URI = 'local host'
-
-# Running the Application:
-cd server
-
-npm start
-
-cd client
-
-npm run dev
