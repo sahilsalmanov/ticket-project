@@ -36,6 +36,10 @@ cd client
 
 npm install
 # Configuration:
+CONNECTION = 'your mongo connection'
+PORT = 'port'
+BASE_URI = 'local host'
+
 # Running the Application:
 cd server
 
