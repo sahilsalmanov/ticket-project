@@ -14,10 +14,12 @@ For opening client side, they must write cd client => npm i => npm run dev
 # Using
 Firstly HomePage
 https://github.com/elminm/project-code/issues/16#issue-1756992183
-HomePage2
 https://github.com/elminm/project-code/issues/17#issue-1757015143
+All Events
 https://github.com/elminm/project-code/issues/18#issue-1757022203
+Favourites
 https://github.com/elminm/project-code/issues/20#issue-1757024162
+DetailPage
 https://github.com/elminm/project-code/issues/19#issue-1757023218
 Login
 https://github.com/elminm/project-code/issues/21#issue-1757024716
