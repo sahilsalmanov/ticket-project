@@ -1,5 +1,6 @@
 # Project Name: EvenTick
 # Description
+https://github.com/elminm/project-code/issues/16#issue-1756992183
 In this website, users can see events and brief information about them. With click to them, users can go to details page and see deatiled information about them. User can login and register to website. Also they can add favourites events to favourites. Users can filter events according to date, category and location.
 # Installation:
 Clone the repository: git clone https://github.com/elminm/project-code.git.
