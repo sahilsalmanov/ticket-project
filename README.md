@@ -12,7 +12,17 @@ then users must write cd server => npm i => npm start
 For opening client side, they must write cd client => npm i => npm run dev
 
 # Using
+Firstly HomePage
 https://github.com/elminm/project-code/issues/16#issue-1756992183
+HomePage2
+https://github.com/elminm/project-code/issues/17#issue-1757015143
+https://github.com/elminm/project-code/issues/18#issue-1757022203
+https://github.com/elminm/project-code/issues/20#issue-1757024162
+https://github.com/elminm/project-code/issues/19#issue-1757023218
+Login
+https://github.com/elminm/project-code/issues/21#issue-1757024716
+Register
+https://github.com/elminm/project-code/issues/22#issue-1757025440
 
 
 # Technologies used:
