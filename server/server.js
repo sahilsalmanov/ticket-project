@@ -9,6 +9,7 @@ const { connectDb } = require("./config/db");
 require("dotenv").config();
 const path = require("path");
 const fileUpload = require("express-fileupload");
+const winston = require('winston');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(fileUpload());

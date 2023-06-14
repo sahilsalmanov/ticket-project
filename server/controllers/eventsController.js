@@ -1,4 +1,5 @@
 const { Events } = require("../models/eventsModel");
+const { logger } = require("../config/logger/eventLogger")
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
 const path = require("path");
@@ -53,6 +54,7 @@ const eventsController = {
 
       await event.save();
       res.send("Success!!");
+      logger.log('info', 'New Event Added', { message: 'event added..: ' });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -63,9 +65,11 @@ const eventsController = {
     Events.findByIdAndDelete(id)
       .then((data) => {
         res.json(data);
+        logger.log('info', 'Event is Deleted', { message: 'event deleted.. Id: ' + id });
       })
       .catch((err) => {
         res.status(500).json(err);
+        logger.log('error', 'Event is not Deleted', { message: 'event is not deleted.. Id: ' + id });
       });
   },
   update: (req, res) => {

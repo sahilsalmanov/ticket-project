@@ -1,4 +1,5 @@
 const { Seats } = require("../models/seatsModel")
+const { logger } = require("../config/logger/seatLogger")
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
 const path = require("path");
@@ -44,6 +45,7 @@ const seatsController = {
         seats.save()
 
         res.json(seats)
+        logger.log('info', 'New Seats Added', { message: 'seats added.. ' });
     },
     deleteById: (req, res) => {
 
@@ -52,9 +54,11 @@ const seatsController = {
         Seats.findByIdAndDelete(id)
             .then(data => {
                 res.json(data)
+                logger.log('info', 'Seat is Deleted', { message: 'seat deleted.. Id: ' + id });
             })
             .catch(err => {
                 res.status(500).json(err)
+                logger.log('error', 'Seat is not Deleted', { message: 'Seat is not deleted.. Id: ' + id });
             })
     },
     update: (req, res) => {
