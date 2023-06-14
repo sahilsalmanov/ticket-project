@@ -1,4 +1,5 @@
 const { Category } = require("../models/categoryModel");
+const { logger } = require("../config/logger")
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
 const path = require("path");
@@ -40,6 +41,7 @@ const categoryController = {
     Category.findByIdAndDelete(id)
       .then((data) => {
         res.json(data);
+        logger.log('info', 'Category Delete', { message: 'category deleted.. Id: ' + id });
       })
       .catch((err) => {
         res.status(500).json(err);
