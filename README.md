@@ -12,8 +12,8 @@ then users must write cd server => npm i => npm start
 For opening client side, they must write cd client => npm i => npm run dev
 
 # Using
-Firstly HomePage is opened
 https://github.com/elminm/project-code/issues/16#issue-1756992183
+
 
 # Technologies used:
 Node.js
